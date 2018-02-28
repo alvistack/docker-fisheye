@@ -63,6 +63,7 @@ RUN set -ex \
 RUN set -ex \
     && ARCHIVE="`mktemp --suffix=.zip`" \
     && curl -skL $FISHEYE_DOWNLOAD_URL > $ARCHIVE \
+    && mkdir -p $FISHEYE_CATALINA \
     && TMP_DIR="`mktemp -d`" && unzip -qq $ARCHIVE -x -d $TMP_DIR && rsync -av $TMP_DIR/*/ $FISHEYE_CATALINA && rm -rf $TMP_DIR \
     && chown -Rf $FISHEYE_OWNER:$FISHEYE_GROUP $FISHEYE_CATALINA \
     && rm -rf $ARCHIVE
