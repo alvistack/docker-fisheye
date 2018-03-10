@@ -4,7 +4,7 @@ Docker Image Packaging for Atlassian Fisheye
 [![Travis](https://img.shields.io/travis/alvistack/docker-fisheye.svg)](https://travis-ci.org/alvistack/docker-fisheye)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-fisheye.svg)](https://github.com/alvistack/docker-fisheye/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-fisheye.svg)](https://github.com/alvistack/docker-fisheye/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/docker-fisheye.svg)](https://hub.docker.com/r/alvistack/docker-fisheye/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/fisheye.svg)](https://hub.docker.com/r/alvistack/fisheye/)
 
 FishEye is the on-premise source code repository browser for enterprise teams. It provides your developers with advanced browsing and search for SVN, Git, Mercurial, Perforce and CVS code repositories, from any web browser.
 
@@ -24,7 +24,7 @@ Volume permission is managed by entry scripts. To get started you can use a data
 Start Atlassian Fisheye Server:
 
     # Pull latest image
-    docker pull alvistack/docker-fisheye
+    docker pull alvistack/fisheye
 
     # Run as detach
     docker run \
@@ -32,7 +32,7 @@ Start Atlassian Fisheye Server:
         --name fisheye \
         --publish 8060:8060 \
         --volume /var/atlassian/application-data/fisheye:/var/atlassian/application-data/fisheye \
-        alvistack/docker-fisheye
+        alvistack/fisheye
 
 **Success**. Fisheye is now available on <http://localhost:8060>
 
@@ -121,7 +121,7 @@ For evaluations you can use the built-in database that will store its files in t
 Versioning
 ----------
 
-The `latest` tag matches the most recent version of this repository. Thus using `alvistack/docker-fisheye:latest` or `alvistack/docker-fisheye` will ensure you are running the most up to date version of this image.
+The `latest` tag matches the most recent version of this repository. Thus using `alvistack/fisheye:latest` or `alvistack/fisheye` will ensure you are running the most up to date version of this image.
 
 License
 -------
