@@ -10,6 +10,12 @@ FishEye is the on-premise source code repository browser for enterprise teams. I
 
 Learn more about Fisheye: <https://www.atlassian.com/software/fisheye>
 
+Supported Tags and Respective `Dockerfile` Links
+------------------------------------------------
+
+-   [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-fisheye/blob/master/Dockerfile)
+-   [`4.5` (4.5/Dockerfile)](https://github.com/alvistack/docker-fisheye/blob/4.5/Dockerfile)
+
 Overview
 --------
 
