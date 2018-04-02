@@ -35,7 +35,7 @@ WORKDIR $FISHEYE_HOME
 EXPOSE 8059
 EXPOSE 8060
 
-ENTRYPOINT [ "/usr/local/bin/dumb-init", "--" ]
+ENTRYPOINT [ "dumb-init", "--" ]
 CMD        [ "/etc/init.d/fisheye", "start", "-fg" ]
 
 # Prepare APT depedencies
