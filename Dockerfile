@@ -102,6 +102,11 @@ RUN set -ex \
     && tar zxf $ARCHIVE --strip-components=1 -C $FISHEYE_CATALINA/lib/ mysql-connector-java-8.0.12/mysql-connector-java-8.0.12.jar \
     && rm -rf $ARCHIVE
 
+# Install PostgreSQL JDBC JAR
+RUN set -ex \
+    && rm -rf $FISHEYE_CATALINA/lib/dbdrivers/postgresql/*postgresql*.jar \
+    && curl -skL https://jdbc.postgresql.org/download/postgresql-42.2.4.jar > $FISHEYE_CATALINA/lib/dbdrivers/postgresql/postgresql-42.2.4.jar
+
 # Install dumb-init
 RUN set -ex \
     && curl -skL https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 > /usr/local/bin/dumb-init \
