@@ -1,7 +1,7 @@
 diff -urp a/opt/atlassian/fisheye/bin/fisheyectl.sh b/opt/atlassian/fisheye/bin/fisheyectl.sh
---- a/opt/atlassian/fisheye/bin/fisheyectl.sh	2018-03-14 09:42:37.858141126 +0800
-+++ b/opt/atlassian/fisheye/bin/fisheyectl.sh	2018-03-10 22:10:04.018407722 +0800
-@@ -1,61 +1,77 @@
+--- a/opt/atlassian/fisheye/bin/fisheyectl.sh	2018-09-21 10:56:55.015459899 +0800
++++ b/opt/atlassian/fisheye/bin/fisheyectl.sh	2018-09-21 10:59:19.797381850 +0800
+@@ -1,61 +1,79 @@
 -#!/bin/sh
 +#!/bin/bash
  
@@ -81,10 +81,11 @@ diff -urp a/opt/atlassian/fisheye/bin/fisheyectl.sh b/opt/atlassian/fisheye/bin/
 -if [ -z "$FISHEYE_INST" ] ; then
 -  FISHEYE_INST=$FISHEYE_HOME
 -fi
--
--FISHEYE_OPTS=`$JAVACMD -cp $FISHEYE_HOME/fisheyeboot.jar com.cenqua.fisheye.boot.OptsSetter`
 +FISHEYE_OPTS=`$JAVACMD -cp $FISHEYE_CATALINA/fisheyeboot.jar com.cenqua.fisheye.boot.OptsSetter`
 +FISHEYE_OPTS="-Xms${JVM_MINIMUM_MEMORY:-512m} -Xmx${JVM_MAXIMUM_MEMORY:-1024m} ${JVM_SUPPORT_RECOMMENDED_ARGS:-"-Datlassian.plugins.enable.wait=300"} -Dcatalina.connector.scheme=${CATALINA_CONNECTOR_SCHEME:-http} -Dcatalina.connector.secure=${CATALINA_CONNECTOR_SECURE:-false} -Dcatalina.connector.proxyName=${CATALINA_CONNECTOR_PROXYNAME:-} -Dcatalina.connector.proxyPort=${CATALINA_CONNECTOR_PROXYPORT:-} -Dcatalina.context.path=${CATALINA_CONTEXT_PATH:-} -Dfile.encoding=UTF-8 $FISHEYE_OPTS"
+ 
+-FISHEYE_OPTS=`$JAVACMD -cp $FISHEYE_HOME/fisheyeboot.jar com.cenqua.fisheye.boot.OptsSetter`
++FISHEYE_CMD="$JAVACMD $FISHEYE_OPTS -Dfisheye.library.path=$FISHEYE_LIBRARY_PATH -Dfisheye.inst=$FISHEYE_HOME -Djava.awt.headless=true -Djava.endorsed.dirs=$FISHEYE_CATALINA/lib/endorsed -jar $FISHEYE_CATALINA/fisheyeboot.jar"
  
 -FISHEYE_CMD="$JAVACMD $FISHEYE_OPTS  -Dfisheye.library.path=$FISHEYE_LIBRARY_PATH -Dfisheye.inst=$FISHEYE_INST -Djava.awt.headless=true -Djava.endorsed.dirs=$FISHEYE_HOME/lib/endorsed -jar $FISHEYE_HOME/fisheyeboot.jar"
 -if [ "$1" = "start" ] ; then
@@ -96,7 +97,7 @@ diff -urp a/opt/atlassian/fisheye/bin/fisheyectl.sh b/opt/atlassian/fisheye/bin/
 -else
 -  exec $FISHEYE_CMD $@ $FISHEYE_ARGS
 -fi
-+FISHEYE_CMD="$JAVACMD $FISHEYE_OPTS -Dfisheye.library.path=$FISHEYE_LIBRARY_PATH -Dfisheye.inst=$FISHEYE_HOME -Djava.awt.headless=true -Djava.endorsed.dirs=$FISHEYE_CATALINA/lib/endorsed -jar $FISHEYE_CATALINA/fisheyeboot.jar"
++sed -i "s/\(<session-timeout>\).*\(<\/session-timeout>\)/\1${SESSION_TIMEOUT:-120}\2/g" ${FISHEYE_CATALINA}/content/WEB-INF/web.xml
  
 +case "$1" in
 +    run)
@@ -123,8 +124,8 @@ diff -urp a/opt/atlassian/fisheye/bin/fisheyectl.sh b/opt/atlassian/fisheye/bin/
 +        ;;
 +esac
 diff -urp a/opt/atlassian/fisheye/bin/start.sh b/opt/atlassian/fisheye/bin/start.sh
---- a/opt/atlassian/fisheye/bin/start.sh	2018-03-14 09:42:25.946389585 +0800
-+++ b/opt/atlassian/fisheye/bin/start.sh	2018-03-10 22:10:04.018407722 +0800
+--- a/opt/atlassian/fisheye/bin/start.sh	2018-09-21 10:56:55.015459899 +0800
++++ b/opt/atlassian/fisheye/bin/start.sh	2018-09-21 10:35:44.000000000 +0800
 @@ -1,24 +1,28 @@
 -#!/bin/sh
 -
@@ -174,3 +175,14 @@ diff -urp a/opt/atlassian/fisheye/bin/start.sh b/opt/atlassian/fisheye/bin/start
 +else
 +    exec $PRGDIR/fisheyectl.sh start "$@"
 +fi
+diff -urp a/opt/atlassian/fisheye/content/WEB-INF/web.xml b/opt/atlassian/fisheye/content/WEB-INF/web.xml
+--- a/opt/atlassian/fisheye/content/WEB-INF/web.xml	2018-07-26 18:00:28.000000000 +0800
++++ b/opt/atlassian/fisheye/content/WEB-INF/web.xml	2018-09-21 10:58:16.736591976 +0800
+@@ -13,6 +13,7 @@
+             <http-only>true</http-only>
+         </cookie-config>
+         <tracking-mode>COOKIE</tracking-mode>
++        <session-timeout>120</session-timeout>
+     </session-config>
+ 
+     <!-- Listeners -->
