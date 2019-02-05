@@ -14,8 +14,8 @@
 
 FROM ubuntu:18.04
 
-ENV FISHEYE_OWNER                "daemon"
-ENV FISHEYE_GROUP                "daemon"
+ENV FISHEYE_OWNER                "fisheye"
+ENV FISHEYE_GROUP                "fisheye"
 ENV FISHEYE_HOME                 "/var/atlassian/application-data/fisheye"
 ENV FISHEYE_CATALINA             "/opt/atlassian/fisheye"
 ENV FISHEYE_DOWNLOAD_URL         "https://product-downloads.atlassian.com/software/fisheye/downloads/fisheye-4.6.1.zip"
