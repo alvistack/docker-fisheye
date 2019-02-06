@@ -40,6 +40,11 @@ EXPOSE 8060
 ENTRYPOINT [ "dumb-init", "--" ]
 CMD        [ "docker-entrypoint.sh" ]
 
+# Explicitly set system user UID/GID
+RUN set -ex \
+    && groupadd -r $FISHEYE_OWNER \
+    && useradd -r -g $FISHEYE_GROUP -d $FISHEYE_HOME -M -s /usr/sbin/nologin $FISHEYE_OWNER
+
 # Prepare APT depedencies
 RUN set -ex \
     && apt-get update \

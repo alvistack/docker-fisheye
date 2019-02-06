@@ -5,6 +5,7 @@
 ### Major Changes
 
   - Run systemd service with specific system user
+  - Explicitly set system user UID/GID
 
 ## 4.6.1-1alvistack1 - 2018-12-10
 
