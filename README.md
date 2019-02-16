@@ -12,8 +12,8 @@ Learn more about Fisheye: <https://www.atlassian.com/software/fisheye>
 ## Supported Tags and Respective `Dockerfile` Links
 
   - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-fisheye/blob/master/Dockerfile)
+  - [`4.7` (4.7/Dockerfile)](https://github.com/alvistack/docker-fisheye/blob/4.7/Dockerfile)
   - [`4.6` (4.6/Dockerfile)](https://github.com/alvistack/docker-fisheye/blob/4.6/Dockerfile)
-  - [`4.5` (4.5/Dockerfile)](https://github.com/alvistack/docker-fisheye/blob/4.5/Dockerfile)
 
 ## Overview
 
