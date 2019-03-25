@@ -37,7 +37,10 @@
         - { state: "latest", name: "openjdk-8-jdk" }
       java_home: "/usr/lib/jvm/java-8-openjdk-amd64"
     - role: fisheye
-      fisheye_download_url: "{{ lookup('env','FISHEYE_DOWNLOAD_URL') }}"
+      fisheye_download:
+        url: "{{ lookup('env','FISHEYE_DOWNLOAD_URL') }}"
+        dest: "{{ lookup('env','FISHEYE_DOWNLOAD_DEST') }}"
+        checksum: "{{ lookup('env','FISHEYE_DOWNLOAD_CHECKSUM') }}"
 
 - hosts: all
   remote_user: root
@@ -64,4 +67,16 @@
         - { state: "absent", dest: "/var/lib/apt/lists", owner: "root", group: "root", mode: "0755" }
         - { state: "directory", dest: "/var/lib/apt/lists", owner: "root", group: "root", mode: "0755" }
         - { state: "touch", dest: "/var/lib/apt/lists/lock", owner: "root", group: "root", mode: "0640" }
+      changed_when: false
+
+    - name: flush tmp
+      file:
+        dest: "{{ item.dest }}"
+        state: "{{ item.state }}"
+        owner: "{{ item.owner }}"
+        group: "{{ item.group }}"
+        mode: "{{ item.mode }}"
+      with_items:
+        - { state: "absent", dest: "/tmp", owner: "root", group: "root", mode: "1777" }
+        - { state: "directory", dest: "/tmp", owner: "root", group: "root", mode: "1777" }
       changed_when: false
