@@ -1,11 +1,16 @@
 # Docker Image Packaging for Atlassian Fisheye
 
-## 4.6.x-0alvistack1 -TBC
+## 4.7.0-0alvistackx - TBC
+
+### Major Changes
+
+## 4.7.0-0alvistack5 - 2019-04-16
 
 ### Major Changes
 
   - Run systemd service with specific system user
   - Explicitly set system user UID/GID
+  - Porting to Molecule based
 
 ## 4.6.1-1alvistack1 - 2018-12-10
 
