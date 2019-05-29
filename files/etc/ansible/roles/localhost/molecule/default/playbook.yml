@@ -36,7 +36,4 @@
         - { state: "latest", name: "openjdk-8-jdk" }
       java_home: "/usr/lib/jvm/java-8-openjdk-amd64"
     - role: fisheye
-      fisheye_download:
-        url: "{{ lookup('env','FISHEYE_DOWNLOAD_URL') }}"
-        dest: "{{ lookup('env','FISHEYE_DOWNLOAD_DEST') }}"
-        checksum: "{{ lookup('env','FISHEYE_DOWNLOAD_CHECKSUM') }}"
+      fisheye_version: "{{ lookup('env','FISHEYE_VERSION') }}"
