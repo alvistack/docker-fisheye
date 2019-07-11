@@ -14,7 +14,7 @@
 
 FROM ubuntu:18.04
 
-ENV FISHEYE_VERSION              "4.7.0"
+ENV FISHEYE_VERSION              "4.7.1"
 ENV FISHEYE_OWNER                "fisheye"
 ENV FISHEYE_GROUP                "fisheye"
 ENV FISHEYE_HOME                 "/var/atlassian/application-data/fisheye"
