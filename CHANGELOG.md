@@ -1,8 +1,18 @@
 # Docker Image Packaging for Atlassian Fisheye
 
-## 4.7.0-0alvistackx - TBC
+## 4.7.x-0alvistack1 - TBC
 
 ### Major Changes
+
+## 4.7.1-0alvistack4 - 2019-08-29
+
+### Major Changes
+
+  - Simplify parameters combination with `JAVA_VERSION`
+  - Simplify parameters combination with `BAMBOO_VERSION`
+  - Ensure required folders exist with correct owner:group
+  - Prepend executable if command starts with an option
+  - Improve `ENTRYPOINT` and `CMD`
 
 ## 4.7.0-0alvistack8 - 2019-05-20
 
