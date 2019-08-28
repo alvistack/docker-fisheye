@@ -14,12 +14,12 @@
 
 FROM ubuntu:18.04
 
+ENV JAVA_VERSION                 "1.8.0"
 ENV FISHEYE_VERSION              "4.7.1"
 ENV FISHEYE_OWNER                "fisheye"
 ENV FISHEYE_GROUP                "fisheye"
 ENV FISHEYE_HOME                 "/var/atlassian/application-data/fisheye"
 ENV FISHEYE_CATALINA             "/opt/atlassian/fisheye"
-ENV JAVA_HOME                    "/usr/lib/jvm/java-8-openjdk-amd64"
 ENV JVM_MINIMUM_MEMORY           "512m"
 ENV JVM_MAXIMUM_MEMORY           "1024m"
 ENV CATALINA_CONNECTOR_PROXYNAME ""
