@@ -37,8 +37,8 @@ WORKDIR $FISHEYE_HOME
 EXPOSE 8059
 EXPOSE 8060
 
-ENTRYPOINT [ "dumb-init", "--" ]
-CMD        [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+CMD        [ "/opt/atlassian/fisheye/bin/start.sh", "-fg" ]
 
 # Explicitly set system user UID/GID
 RUN set -ex \
