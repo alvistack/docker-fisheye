@@ -32,6 +32,6 @@
     - role: mercurial
     - role: perforce
     - role: java
-      java_version: "{{ lookup('env','JAVA_VERSION') }}"
+      java_release: "{{ lookup('env','JAVA_RELEASE') }}"
     - role: fisheye
       fisheye_version: "{{ lookup('env','FISHEYE_VERSION') }}"
