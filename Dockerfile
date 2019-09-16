@@ -14,7 +14,6 @@
 
 FROM ubuntu:18.04
 
-ENV JAVA_RELEASE                 "1.8.x"
 ENV FISHEYE_VERSION              "4.7.1"
 ENV FISHEYE_OWNER                "fisheye"
 ENV FISHEYE_GROUP                "fisheye"
