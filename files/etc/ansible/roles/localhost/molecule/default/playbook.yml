@@ -33,6 +33,6 @@
     - role: mercurial
     - role: perforce
     - role: java
-      java_release: "{{ lookup('env','JAVA_RELEASE') }}"
+      java_release: "8"
     - role: fisheye
       fisheye_version: "{{ lookup('env','FISHEYE_VERSION') }}"
