@@ -36,6 +36,10 @@
       java_release: "8"
     - role: fisheye
       fisheye_version: "{{ lookup('env','FISHEYE_VERSION') }}"
+      fisheye_owner: "{{ lookup('env','FISHEYE_HOME') }}"
+      fisheye_group: "{{ lookup('env','FISHEYE_GROUP') }}"
+      fisheye_home: "{{ lookup('env','FISHEYE_HOME') }}"
+      fisheye_catalina: "{{ lookup('env','FISHEYE_CATALINA') }}"
       fisheye_jvm_minimum_memory: "{{ lookup('env', 'JVM_MINIMUM_MEMORY') }}"
       fisheye_jvm_maximum_memory: "{{ lookup('env', 'JVM_MAXIMUM_MEMORY') }}"
       fisheye_catalina_connector_proxyname: "{{ lookup('env', 'CATALINA_CONNECTOR_PROXYNAME') }}"
