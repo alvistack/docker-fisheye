@@ -36,7 +36,7 @@
       java_release: "8"
     - role: fisheye
       fisheye_version: "{{ lookup('env','FISHEYE_VERSION') }}"
-      fisheye_owner: "{{ lookup('env','FISHEYE_HOME') }}"
+      fisheye_owner: "{{ lookup('env','FISHEYE_OWNER') }}"
       fisheye_group: "{{ lookup('env','FISHEYE_GROUP') }}"
       fisheye_home: "{{ lookup('env','FISHEYE_HOME') }}"
       fisheye_catalina: "{{ lookup('env','FISHEYE_CATALINA') }}"
