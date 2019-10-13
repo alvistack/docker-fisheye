@@ -11,7 +11,7 @@ fi
 if [ "$1" = '/opt/atlassian/fisheye/bin/start.sh' ] && [ "$(id -u)" = '0' ]; then
     mkdir -p $FISHEYE_HOME
     chmod 0755 $FISHEYE_HOME
-    chown -Rf $FISHEYE_OWNER:$FISHEYE_GROUP $FISHEYE_HOME
+    chown $FISHEYE_OWNER:$FISHEYE_GROUP $FISHEYE_HOME
     exec gosu $FISHEYE_OWNER "$BASH_SOURCE" "$@"
 fi
 
