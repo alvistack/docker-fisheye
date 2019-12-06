@@ -19,7 +19,7 @@ ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
-ENV FISHEYE_VERSION              "4.7.2"
+ENV FISHEYE_VERSION              "4.7.3"
 ENV FISHEYE_OWNER                "fisheye"
 ENV FISHEYE_GROUP                "fisheye"
 ENV FISHEYE_HOME                 "/var/atlassian/application-data/fisheye"
