@@ -19,7 +19,7 @@ ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
-ENV JAVA_RELEASE                 "8"
+ENV OPENJDK_RELEASE              "8"
 ENV FISHEYE_VERSION              "4.8.0"
 ENV FISHEYE_OWNER                "fisheye"
 ENV FISHEYE_GROUP                "fisheye"

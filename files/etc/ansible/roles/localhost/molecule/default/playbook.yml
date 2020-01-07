@@ -33,6 +33,6 @@
     - role: git
     - role: mercurial
     - role: perforce
-    - role: java
+    - role: openjdk
     - role: fisheye
     - role: localhost
