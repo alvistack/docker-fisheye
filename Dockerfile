@@ -42,7 +42,7 @@ WORKDIR $FISHEYE_HOME
 EXPOSE 8059
 EXPOSE 8060
 
-ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+ENTRYPOINT [ "tini", "-g", "--", "docker-entrypoint.sh" ]
 CMD        [ "start.sh", "-fg" ]
 
 # Hotfix for en_US.utf8 locale
