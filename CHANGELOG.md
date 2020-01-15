@@ -1,8 +1,16 @@
 # Docker Image Packaging for Atlassian Fisheye
 
-## 4.7.2-XalvistackY - TBC
+## 4.8.0-XalvistackY - TBC
 
 ### Major Changes
+
+## 4.8.0-3alvistack1 - 2020-01-15
+
+### Major Changes
+
+  - Replace `dumb-init` with `tini`, as like as `docker --init`
+  - Replace `java` with `openjdk`
+  - Include release specific vars and tasks
 
 ## 4.7.2-2alvistack3 - 2019-11-05
 
