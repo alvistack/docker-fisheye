@@ -1,0 +1,71 @@
+# (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+FROM ubuntu:18.04
+
+ENV LANG   "en_US.utf8"
+ENV LC_ALL "en_US.utf8"
+ENV SHELL  "/bin/bash"
+ENV TZ     "UTC"
+
+# Hotfix for systemd
+RUN set -ex \
+    && apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y systemd \
+    && find /lib/systemd/system/sysinit.target.wants/ -name "systemd-tmpfiles-setup.service" -delete \
+    && rm -f /lib/systemd/system/multi-user.target.wants/* \
+    && rm -f /etc/systemd/system/*.wants/* \
+    && rm -f /lib/systemd/system/local-fs.target.wants/* \
+    && rm -f /lib/systemd/system/sockets.target.wants/*udev* \
+    && rm -f /lib/systemd/system/sockets.target.wants/*initctl* \
+    && rm -f /lib/systemd/system/basic.target.wants/* \
+    && rm -rf /var/lib/apt/lists/*
+
+# Hotfix for en_US.utf8 locale
+RUN set -ex \
+    && apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y locales \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV OPENJDK_RELEASE              "{{ openjdk_release }}"
+ENV FISHEYE_VERSION              "{{ fisheye_version }}"
+ENV FISHEYE_OWNER                "{{ fisheye_owner }}"
+ENV FISHEYE_GROUP                "{{ fisheye_group }}"
+ENV FISHEYE_HOME                 "{{ fisheye_home }}"
+ENV FISHEYE_CATALINA             "{{ fisheye_catalina }}"
+ENV JVM_MINIMUM_MEMORY           "{{ fisheye_jvm_minimum_memory }}"
+ENV JVM_MAXIMUM_MEMORY           "{{ fisheye_jvm_maximum_memory }}"
+ENV CATALINA_CONNECTOR_PROXYNAME "{{ fisheye_catalina_connector_proxyname }}"
+ENV CATALINA_CONNECTOR_PROXYPORT "{{ fisheye_catalina_connector_proxyport }}"
+ENV CATALINA_CONNECTOR_SCHEME    "{{ fisheye_catalina_connector_scheme }}"
+ENV CATALINA_CONNECTOR_SECURE    "{{ fisheye_catalina_connector_secure }}"
+ENV CATALINA_CONTEXT_PATH        "{{ fisheye_catalina_context_path }}"
+ENV JVM_SUPPORT_RECOMMENDED_ARGS "{{ fisheye_jvm_support_recommended_args }}"
+ENV SESSION_TIMEOUT              "300"
+ENV PATH                         "$PATH:$FISHEYE_CATALINA/bin"
+
+VOLUME  $FISHEYE_HOME
+WORKDIR $FISHEYE_HOME
+
+EXPOSE 8059
+EXPOSE 8060
+
+ENTRYPOINT [ "tini", "-g", "--", "docker-entrypoint.sh" ]
+CMD        [ "start.sh", "-fg" ]
+
+# Explicitly set system user UID/GID
+RUN set -ex \
+    && groupadd -r $FISHEYE_OWNER \
+    && useradd -r -g $FISHEYE_GROUP -d $FISHEYE_HOME -M -s /usr/sbin/nologin $FISHEYE_OWNER

@@ -11,13 +11,18 @@ Learn more about Fisheye: <https://www.atlassian.com/software/fisheye>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
-  - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-fisheye/blob/master/Dockerfile)
-  - [`4.8` (4.8/Dockerfile)](https://github.com/alvistack/docker-fisheye/blob/4.8/Dockerfile)
-  - [`4.7` (4.7/Dockerfile)](https://github.com/alvistack/docker-fisheye/blob/4.7/Dockerfile)
+  - [`4.8`, `latest`](https://github.com/alvistack/docker-fisheye/blob/master/molecule/4.8/Dockerfile.j2)
+  - [`4.7`](https://github.com/alvistack/docker-fisheye/blob/master/molecule/4.7/Dockerfile.j2)
 
 ## Overview
 
 This Docker container makes it easy to get an instance of Fisheye up and running.
+
+Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
+
+  - Minimized `Dockerfile` for meta data definition
+  - Provision by Ansible and Molecule Docker driver in single layer
+  - Handle `ENTRYPOINT` with [tini](https://github.com/krallin/tini)
 
 ### Quick Start
 
