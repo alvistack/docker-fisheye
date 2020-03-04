@@ -1,10 +1,15 @@
 # Docker Image Packaging for Atlassian Fisheye
 
-## 4.8.0-XalvistackY - TBC
+## 4.8.1-XalvistackY - TBC
+
+### Major Changes
+
+## 4.8.1-4alvistack1 - 2020-03-04
 
 ### Major Changes
 
   - Revamp with Molecule and `docker commit`
+  - Hotfix for systemd
 
 ## 4.8.0-3alvistack1 - 2020-01-15
 
