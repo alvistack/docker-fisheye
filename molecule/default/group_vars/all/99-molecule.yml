@@ -14,21 +14,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-namespace: alvistack
-name: docker-fisheye
-description: Docker Image Packaging for Atlassian Fisheye
-
-version: VERSION
-readme: README.md
-license: Apache-2.0
-
-repository: https://github.com/alvistack/docker-fisheye
-documentation: https://github.com/alvistack/docker-fisheye
-homepage: https://github.com/alvistack/docker-fisheye
-issues: https://github.com/alvistack/docker-fisheye/issues
-
-dependencies: {}
-tags:
-  - system
-authors:
-  - Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+fisheye_version: "4.8.1"
