@@ -1,6 +1,6 @@
 # Docker Image Packaging for Atlassian Fisheye
 
-[![Travis](https://img.shields.io/travis/alvistack/docker-fisheye.svg)](https://travis-ci.org/alvistack/docker-fisheye)
+[![Travis](https://img.shields.io/travis/com/alvistack/docker-fisheye.svg)](https://travis-ci.com/alvistack/docker-fisheye)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-fisheye.svg)](https://github.com/alvistack/docker-fisheye/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-fisheye.svg)](https://github.com/alvistack/docker-fisheye/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/fisheye.svg)](https://hub.docker.com/r/alvistack/fisheye/)
@@ -143,9 +143,13 @@ For evaluations you can use the built-in database that will store its files in t
 
 ## Versioning
 
+### `alvistack/fisheye:latest`
+
 The `latest` tag matches the most recent [GitHub Release](https://github.com/alvistack/docker-fisheye/releases) of this repository. Thus using `alvistack/fisheye:latest` or `alvistack/fisheye` will ensure you are running the most up to date stable version of this image.
 
-Other tags are rolling release rebuild by [Travis](https://travis-ci.org/alvistack/docker-fisheye) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
+### `alvistack/fisheye:<version>`
+
+The version tags are rolling release rebuild by [Travis](https://travis-ci.com/alvistack/docker-fisheye) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
 
 ## License
 
