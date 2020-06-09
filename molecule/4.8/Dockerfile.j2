@@ -63,7 +63,7 @@ WORKDIR $FISHEYE_HOME
 EXPOSE 8059
 EXPOSE 8060
 
-ENTRYPOINT [ "tini", "-g", "--", "docker-entrypoint.sh" ]
+ENTRYPOINT [ "catatonit", "-g", "--", "docker-entrypoint.sh" ]
 CMD        [ "start.sh", "-fg" ]
 
 # Explicitly set system user UID/GID
