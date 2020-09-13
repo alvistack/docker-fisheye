@@ -15,7 +15,7 @@
 # limitations under the License.
 
 openjdk_release: "8"
-fisheye_version: "4.8.3"
+fisheye_version: "4.8.4"
 fisheye_owner: "fisheye"
 fisheye_group: "fisheye"
 fisheye_home: "/var/atlassian/application-data/fisheye"
