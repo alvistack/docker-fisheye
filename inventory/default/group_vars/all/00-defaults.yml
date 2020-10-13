@@ -20,8 +20,8 @@ fisheye_owner: "fisheye"
 fisheye_group: "fisheye"
 fisheye_home: "/var/atlassian/application-data/fisheye"
 fisheye_catalina: "/opt/atlassian/fisheye"
-fisheye_jvm_minimum_memory: "1024m"
-fisheye_jvm_maximum_memory: "1024m"
+fisheye_jvm_minimum_memory: "2048m"
+fisheye_jvm_maximum_memory: "2048m"
 fisheye_catalina_connector_proxyname: ~
 fisheye_catalina_connector_proxyport: ~
 fisheye_catalina_connector_scheme: "http"
