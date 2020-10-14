@@ -1,6 +1,10 @@
 # Docker Image Packaging for Atlassian Fisheye
 
-## 4.8.3-XalvistackY - TBC
+## 4.8.4-XalvistackY - TBC
+
+### Major Changes
+
+## 4.8.4-4alvistack5 - 2020-10-14
 
 ### Major Changes
 
