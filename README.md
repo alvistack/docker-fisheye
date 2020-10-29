@@ -9,10 +9,10 @@ FishEye is the on-premise source code repository browser for enterprise teams. I
 
 Learn more about Fisheye: <https://www.atlassian.com/software/fisheye>
 
-## Supported Tags and Respective `Dockerfile` Links
+## Supported Tags and Respective Packer Template Links
 
-  - [`4.8`, `latest`](https://github.com/alvistack/docker-fisheye/blob/master/molecule/4.8/Dockerfile.j2)
-  - [`4.7`](https://github.com/alvistack/docker-fisheye/blob/master/molecule/4.7/Dockerfile.j2)
+  - [`4.8`, `latest`](https://github.com/alvistack/docker-fisheye/blob/master/packer/4.8/packer.json)
+  - [`4.7`](https://github.com/alvistack/docker-fisheye/blob/master/packer/4.7/packer.json)
 
 ## Overview
 
@@ -20,8 +20,7 @@ This Docker container makes it easy to get an instance of Fisheye up and running
 
 Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
-  - Minimized `Dockerfile` for meta data definition
-  - Provision by Ansible and Molecule Docker driver in single layer
+  - Packaging by Packer Docker builder and Ansible provisioner in single layer
   - Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
 
 ### Quick Start
