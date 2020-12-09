@@ -1,6 +1,6 @@
 # Docker Image Packaging for Atlassian Fisheye
 
-[![Travis](https://img.shields.io/travis/com/alvistack/docker-fisheye.svg)](https://travis-ci.com/alvistack/docker-fisheye)
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-fisheye/master)](https://gitlab.com/alvistack/docker-fisheye/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-fisheye.svg)](https://github.com/alvistack/docker-fisheye/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-fisheye.svg)](https://github.com/alvistack/docker-fisheye/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/fisheye.svg)](https://hub.docker.com/r/alvistack/fisheye/)
