@@ -1,9 +1,9 @@
 # Docker Image Packaging for Atlassian Fisheye
 
-[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-fisheye/master)](https://gitlab.com/alvistack/docker-fisheye/-/pipelines)
+[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-fisheye/master)](https://gitlab.com/alvistack/docker-fisheye/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-fisheye.svg)](https://github.com/alvistack/docker-fisheye/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-fisheye.svg)](https://github.com/alvistack/docker-fisheye/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/fisheye.svg)](https://hub.docker.com/r/alvistack/fisheye/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/fisheye-4.8.svg)](https://hub.docker.com/r/alvistack/fisheye-4.8)
 
 FishEye is the on-premise source code repository browser for enterprise teams. It provides your developers with advanced browsing and search for SVN, Git, Mercurial, Perforce and CVS code repositories, from any web browser.
 
@@ -11,8 +11,10 @@ Learn more about Fisheye: <https://www.atlassian.com/software/fisheye>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`4.8`, `latest`](https://github.com/alvistack/docker-fisheye/blob/master/packer/4.8/packer.json)
-  - [`4.7`](https://github.com/alvistack/docker-fisheye/blob/master/packer/4.7/packer.json)
+  - [`alvistack/fisheye-4.8`](https://hub.docker.com/r/alvistack/fisheye-4.8)
+      - [`packer/docker-4.8/packer.json`](https://github.com/alvistack/docker-fisheye/blob/master/packer/docker-4.8/packer.json)
+  - [`alvistack/fisheye-4.7`](https://hub.docker.com/r/alvistack/fisheye-4.7)
+      - [`packer/docker-4.7/packer.json`](https://github.com/alvistack/docker-fisheye/blob/master/packer/docker-4.7/packer.json)
 
 ## Overview
 
@@ -142,13 +144,13 @@ For evaluations you can use the built-in database that will store its files in t
 
 ## Versioning
 
-### `alvistack/fisheye:latest`
+### `YYYYMMDD.Y.Z`
 
-The `latest` tag matches the most recent [GitHub Release](https://github.com/alvistack/docker-fisheye/releases) of this repository. Thus using `alvistack/fisheye:latest` or `alvistack/fisheye` will ensure you are running the most up to date stable version of this image.
+Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-fisheye/releases) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
 
-### `alvistack/fisheye:<version>`
+### `YYYYMMDD.0.0`
 
-The version tags are rolling release rebuild by [Travis](https://travis-ci.com/alvistack/docker-fisheye) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
+Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](https://gitlab.com/alvistack/docker-fisheye/-/pipelines) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
 
 ## License
 
