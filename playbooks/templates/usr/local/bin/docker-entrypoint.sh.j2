@@ -2,7 +2,7 @@
 
 # {{ ansible_managed }}
 
-set -euo pipefail
+set -euxo pipefail
 
 # Prepend executable if command starts with an option
 if [ "${1:0:1}" = '-' ]; then
@@ -15,6 +15,11 @@ if [ "$1" = 'start.sh' ] && [ "$(id -u)" = '0' ]; then
     chmod 0755 $FISHEYE_HOME $FISHEYE_HOME/shared
     chown $FISHEYE_OWNER:$FISHEYE_GROUP $FISHEYE_HOME $FISHEYE_HOME/shared
     exec gosu $FISHEYE_OWNER "$BASH_SOURCE" "$@"
+fi
+
+# Verify configuration with Ansible
+if [ "$1" = 'start.sh' ]; then
+    ansible-playbook --tags fisheye /etc/ansible/playbooks/converge.yml
 fi
 
 exec "$@"
