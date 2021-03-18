@@ -108,6 +108,7 @@
         state: "{{ item.state | default('directory') }}"
       loop:
         - { dest: "/etc/ansible" }
+        - { dest: "/etc/ansible/group_vars/all" }
         - { dest: "/etc/ansible/playbooks" }
         - { dest: "/etc/ansible/roles" }
         - { dest: "/etc/sudoers.d" }
@@ -122,6 +123,7 @@
         mode: "{{ item.mode | default('0644') }}"
       loop:
         - { dest: "/etc/ansible/ansible.cfg" }
+        - { dest: "/etc/ansible/group_vars/all/00-defaults.yml" }
         - { dest: "/etc/sudoers.d/fisheye" }
         - { dest: "/usr/local/bin/docker-entrypoint.sh", mode: "0755" }
 
@@ -134,6 +136,7 @@
         state: "{{ item.state | default('file') }}"
       loop:
         - { dest: "/etc/ansible/ansible.cfg" }
+        - { dest: "/etc/ansible/group_vars/all/00-defaults.yml" }
         - { dest: "/etc/sudoers.d/fisheye" }
         - { dest: "/usr/local/bin/docker-entrypoint.sh", mode: "0755" }
 
