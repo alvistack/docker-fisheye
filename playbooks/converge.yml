@@ -103,9 +103,6 @@
     - name: include role
       include_role:
         name: fisheye
-        apply:
-          tags: fisheye
-      tags: fisheye
 
     - name: apt-get install
       apt:
