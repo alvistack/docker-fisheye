@@ -34,7 +34,7 @@ Volume permission is NOT managed by entry scripts. To get started you can use a 
 Start Atlassian Fisheye Server:
 
     # Pull latest image
-    docker pull alvistack/fisheye
+    docker pull alvistack/fisheye-4.8
     
     # Run as detach
     docker run \
@@ -42,7 +42,7 @@ Start Atlassian Fisheye Server:
         --name fisheye \
         --publish 8060:8060 \
         --volume /var/atlassian/application-data/fisheye:/var/atlassian/application-data/fisheye \
-        alvistack/fisheye
+        alvistack/fisheye-4.8
 
 **Success**. Fisheye is now available on <http://localhost:8060>
 
