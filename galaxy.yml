@@ -15,7 +15,7 @@
 # limitations under the License.
 
 namespace: alvistack
-name: docker-fisheye
+name: fisheye
 description: Docker Image Packaging for Atlassian Fisheye
 
 version: 0.0.0
