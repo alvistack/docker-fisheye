@@ -15,3 +15,5 @@
 # limitations under the License.
 
 fisheye_release: "4.8"
+
+openjdk_release: "8"
