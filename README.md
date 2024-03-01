@@ -22,8 +22,6 @@ Learn more about Fisheye: <https://www.atlassian.com/software/fisheye>
 
 -   [`alvistack/fisheye-4.8`](https://hub.docker.com/r/alvistack/fisheye-4.8)
     -   [`packer/docker-4.8/packer.json`](https://github.com/alvistack/docker-fisheye/blob/master/packer/docker-4.8/packer.json)
--   [`alvistack/fisheye-4.7`](https://hub.docker.com/r/alvistack/fisheye-4.7)
-    -   [`packer/docker-4.7/packer.json`](https://github.com/alvistack/docker-fisheye/blob/master/packer/docker-4.7/packer.json)
 
 ## Overview
 
