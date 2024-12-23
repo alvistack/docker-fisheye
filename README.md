@@ -9,7 +9,7 @@ tag](https://img.shields.io/github/tag/alvistack/docker-fisheye.svg)](https://gi
 [![GitHub
 license](https://img.shields.io/github/license/alvistack/docker-fisheye.svg)](https://github.com/alvistack/docker-fisheye/blob/master/LICENSE)
 [![Docker
-Pulls](https://img.shields.io/docker/pulls/alvistack/fisheye-4.8.svg)](https://hub.docker.com/r/alvistack/fisheye-4.8)
+Pulls](https://img.shields.io/docker/pulls/alvistack/fisheye-4.9.svg)](https://hub.docker.com/r/alvistack/fisheye-4.9)
 
 FishEye is the on-premise source code repository browser for enterprise
 teams. It provides your developers with advanced browsing and search for
@@ -20,8 +20,8 @@ Learn more about Fisheye: <https://www.atlassian.com/software/fisheye>
 
 ## Supported Tags and Respective Packer Template Links
 
-- [`alvistack/fisheye-4.8`](https://hub.docker.com/r/alvistack/fisheye-4.8)
-  - [`packer/docker-4.8/packer.json`](https://github.com/alvistack/docker-fisheye/blob/master/packer/docker-4.8/packer.json)
+- [`alvistack/fisheye-4.9`](https://hub.docker.com/r/alvistack/fisheye-4.9)
+  - [`packer/docker-4.9/packer.json`](https://github.com/alvistack/docker-fisheye/blob/master/packer/docker-4.9/packer.json)
 
 ## Overview
 
@@ -50,7 +50,7 @@ can use a data volume, or named volumes.
 Start Atlassian Fisheye Server:
 
     # Pull latest image
-    docker pull alvistack/fisheye-4.8
+    docker pull alvistack/fisheye-4.9
 
     # Run as detach
     docker run \
@@ -58,7 +58,7 @@ Start Atlassian Fisheye Server:
         --name fisheye \
         --publish 8060:8060 \
         --volume /var/atlassian/application-data/fisheye:/var/atlassian/application-data/fisheye \
-        alvistack/fisheye-4.8
+        alvistack/fisheye-4.9
 
 **Success**. Fisheye is now available on <http://localhost:8060>
 
